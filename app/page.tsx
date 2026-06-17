@@ -79,7 +79,7 @@ export default function Home() {
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-background/94" />
-        <div className="relative mx-auto flex min-h-[76vh] max-w-6xl flex-col justify-center px-4 py-20 sm:px-5 lg:px-6">
+        <div className="relative flex min-h-[76vh] max-w-6xl flex-col justify-center px-4 py-20 sm:px-5 lg:ml-40 lg:mr-4 lg:px-4">
           <div className="max-w-4xl">
             <Image
               src="/edinburgh-engineering-logo.png"
@@ -127,10 +127,10 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="mx-auto flex max-w-6xl gap-6 px-3 sm:px-4 lg:px-5">
+      <div className="max-w-6xl px-3 sm:px-4 lg:ml-40 lg:mr-4 lg:px-4">
         <ChapterNav items={navItems} />
 
-        <article className="min-w-0 flex-1 overflow-hidden">
+        <article className="min-w-0 overflow-hidden">
           {["introduction", "literature", "mechanism"].map((id) => (
             <SectionBlock key={id} section={getSection(id)}>
               {id === "mechanism" ? (

@@ -35,14 +35,16 @@ function NavLinks({
           href={`#${item.id}`}
           onClick={onNavigate}
           className={cn(
-            "group block rounded-md px-2.5 py-1.5 transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none",
+            "group block rounded-md px-2 py-1.5 transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none lg:px-1.5 lg:py-1",
             activeId === item.id && "bg-accent text-accent-foreground",
           )}
         >
-          <span className="text-muted-foreground block text-[10px] font-medium uppercase tracking-wide">
+          <span className="text-muted-foreground block text-[10px] font-medium uppercase tracking-wide lg:text-[9px]">
             {item.eyebrow}
           </span>
-          <span className="text-[13px] font-medium">{item.label}</span>
+          <span className="block text-[13px] leading-5 font-medium lg:text-[12px] lg:leading-4">
+            {item.label}
+          </span>
         </a>
       ))}
     </nav>
@@ -84,14 +86,14 @@ export function ChapterNav({ items }: ChapterNavProps) {
 
   return (
     <>
-      <aside className="sticky top-6 hidden max-h-[calc(100vh-3rem)] w-56 shrink-0 self-start lg:block">
-        <div className="border-b pb-3">
-          <p className="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">
+      <aside className="fixed top-4 bottom-4 left-2 z-30 hidden w-36 rounded-lg border bg-background/90 p-2 shadow-sm backdrop-blur lg:block xl:left-3">
+        <div className="border-b pb-2">
+          <p className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
             Contents
           </p>
-          <h2 className="mt-1.5 text-base font-semibold">Interactive Dissertation</h2>
+          <h2 className="mt-1 text-xs leading-4 font-semibold">Interactive Dissertation</h2>
         </div>
-        <ScrollArea className="mt-3 h-[calc(100vh-9rem)] pr-2">
+        <ScrollArea className="mt-2 h-[calc(100vh-6.75rem)] pr-1">
           <NavLinks items={items} activeId={activeId} />
         </ScrollArea>
       </aside>
