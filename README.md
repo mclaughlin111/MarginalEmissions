@@ -2,7 +2,7 @@
 
 This repository converts `DMcLaughlin Dissertation.pdf` into a production-ready Next.js App Router site.
 
-The app presents the dissertation as an interactive long-form technical article about short-run marginal emissions factors, coal and gas prices, and the British electricity system. It uses typed static content extracted from the PDF, interactive tables, TanStack React Charts, KaTeX-rendered equations, and extracted figure assets.
+The app presents the dissertation as an interactive long-form technical article about short-run marginal emissions factors, coal and gas prices, and the British electricity system. It uses typed static content extracted from the PDF, interactive tables, custom SVG charts, KaTeX-rendered equations, and extracted figure assets.
 
 ## Stack
 
@@ -11,7 +11,7 @@ The app presents the dissertation as an interactive long-form technical article 
 - React
 - Tailwind CSS
 - ShadCN-style UI primitives
-- TanStack React Charts via `react-charts`
+- Custom SVG chart renderer
 - KaTeX for equations
 - Framer Motion for animated equation variable popups
 - `next-themes` for dark mode
@@ -80,7 +80,7 @@ The equation renders with KaTeX. Variables render as hoverable and keyboard-focu
 
 ## Add Or Edit Charts
 
-Add a `ChartSpec` to `charts` in `data/dissertation.ts`. Charts are rendered by `components/charts/data-chart.tsx` using TanStack React Charts:
+Add a `ChartSpec` to `charts` in `data/dissertation.ts`. Charts are rendered by `components/charts/data-chart.tsx`:
 
 ```ts
 {
